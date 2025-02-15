@@ -18,12 +18,16 @@ Output: "The late fee is $2.50."
 
 // ✍️ ✍️ ✍️ ✍️ Write the function here ✍️ ✍️ ✍️ ✍️
 
-
-
+function calculateLateFee(days){
+console.log(`The late fee is $${days*0.25}`)
+}
+calculateLateFee(10)
 // Extra Task:
 // - Convert the function into a function expression.
-
-
+function sum(num1,num2){
+   console.log(num1+num2)
+}
+sum(10,2.50)
 
 /*
 Task 2 : Favorite Color Finder 🚀🚀🚀🚀
@@ -44,13 +48,31 @@ Output: "Red: You are passionate and bold."
 */
 
 // ✍️ ✍️ ✍️ ✍️ Write the function here ✍️ ✍️ ✍️ ✍️
-
+function findColorMeaning(color){
+   if(color==="Blue"){
+      console.log("Blue: You love calm and peace.")
+   }else if(color==="Red"){
+      console.log("Red: You are passionate and bold.")
+   }else if(color==="Green"){
+      console.log("Green: You are connected to nature.")
+   }else if(color==="Yellow"){
+      console.log("Yellow: You radiate happiness and energy.")
+   }else{
+      console.log("That's a unique choice!")
+   }
+   }
+   findColorMeaning("Red")
 
 
 // Extra Task:
 // - Rewrite the function using an arrow function.
-
-
+function findColorMeaning(color){
+   console.log(color==="Blue"?"Blue: You love calm and peace. bold.":
+   color==="Red"?"Red: You are passionate and bold.":"That's a unique choice!")
+color==="Green"?"Green: You are connected to nature.":"That's a unique choice!"
+color==="Yellow"?"Yellow: You radiate happiness and energy.":"That's a unique choice!"
+}
+findColorMeaning("Red")
 
 /*
 Task 3 : Lawyer's Case Log 🚀🚀🚀🚀
@@ -67,13 +89,17 @@ Output: "Case #12345: John Doe's case is now logged."
 */
 
 // ✍️ ✍️ ✍️ ✍️ Write the function here ✍️ ✍️ ✍️ ✍️
-
-
+function logCase(clientName,caseNumber){
+   console.log(`Case #${caseNumber}: ${clientName}'s case is now logged.`)
+}
+logCase("John Doe", 12345)
 
 // Extra Task:
 // - Rewrite the function as an arrow function.
-
-
+function logCase(clientName,caseNumber){
+   console.log(`Case #${caseNumber}: ${clientName}'s case is now logged.`)
+}
+logCase("John Doe", 12345)
 /*
 Task 4 : Attendance Tracker 🚀🚀🚀🚀
 
@@ -93,13 +119,17 @@ Output: "Amina is present."
 */
 
 // ✍️ ✍️ ✍️ ✍️ Write the function here ✍️ ✍️ ✍️ ✍️
-
-
+function markAttendance(studentName,isPresent){
+   console.log(`${studentName} is ${isPresent?"present":"absent"}.`)
+}
+markAttendance("Amina", true)
 
 // Extra Task:
 // - Convert the function into a function expression.
-
-
+function markAttendance(studentName,isPresent) {
+   console.log(`${studentName} is ${isPresent?"present":"absent"}.`)
+}
+markAttendance("Amina", true)
 
 /*
 STRETCH TASK: Student Grade Report Generator 🏈🏈🏈🏈
@@ -107,20 +137,36 @@ STRETCH TASK: Student Grade Report Generator 🏈🏈🏈🏈
 You are a teacher, and you want to automate the creation of detailed grade reports for your class. Write a program that includes the following steps:
 
 1. Write a function called `calculateAverage` that takes three test scores (numbers) as parameters and returns the average of those scores.
-
+function calculateAverage(score1,score2,score3){
+   return (score1+score2+score3)/3
+}
 2. Write another function called `determineGrade` that takes the average score as a parameter and returns the letter grade based on the following rules:
    - "A" for average scores of 90 and above
    - "B" for scores between 80 and 89
    - "C" for scores between 70 and 79
    - "F" for scores below 70
-
+function determineGrade(average){
+   if(average>=90){
+      return "A"
+   }else if(average>=80){
+      return "B"
+   }else if(average>=70){
+      return "C"
+   }else{
+      return "F"
+   }
+}
 3. Write a third function called `generateReport` that:
    - Takes a student's name and three test scores as parameters.
    - Uses `calculateAverage` to calculate the average score.
    - Uses `determineGrade` to find the letter grade.
    - Returns a full report string in this format:
      "[StudentName] - Average Score: [average], Grade: [letterGrade]"
-
+function generateReport(studentName,score1,score2,score3){
+   let average=calculateAverage(score1,score2,score3)
+   let grade=determineGrade(average)
+   return `${studentName} - Average Score: ${average}, Grade: ${grade}`
+}
 4. Finally, use the `prompt` function to input the student’s name and three test scores, and display the generated report using `console.log`.
 
 Example:
@@ -130,8 +176,35 @@ Scores: 85, 90, 78
 
 Output:
 "Amina - Average Score: 84.33, Grade: B"
-
+function calculateAverage(score1,score2,score3){
+   return (score1+score2+score3)/3
+}
 Extra Credit:
 - Extend the program to accept multiple students' names and scores and generate a report for each student using a loop.
 - Use an arrow function for at least one of the functions.
 */
+function calculateAverage(score1,score2,score3){
+   return (score1+score2+score3)/3
+}
+function determineGrade(average){
+   if(average>=90){
+      return "A"
+   }else if(average>=80){
+      return "B"
+   }else if(average>=70){
+      return "C"
+   }else(average<70)
+      return "F" 
+   }
+function generateReport(studentName,score1,score2,score3){
+   let average=calculateAverage(score1,score2,score3)
+   let grade=determineGrade(average)
+   return `${studentName} - Average Score: ${average}, Grade: ${grade}`
+}
+let studentName=prompt("Enter student name")
+let score1=Number(prompt("Enter score 1"))
+let score2=Number(prompt("Enter score 2"))
+let score3=Number(prompt("Enter score 3"))
+
+
+
